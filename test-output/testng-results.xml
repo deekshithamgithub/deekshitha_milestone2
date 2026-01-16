@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[Data Provider value inserted]]>
+    </line>
+    <line>
+      <![CDATA[Browser is opening]]>
+    </line>
+    <line>
+      <![CDATA[login test started]]>
+    </line>
+    <line>
+      <![CDATA[chrome]]>
+    </line>
+    <line>
+      <![CDATA[login test started]]>
+    </line>
+    <line>
+      <![CDATA[LoginPage contructor start to initialise Driver]]>
+    </line>
+    <line>
+      <![CDATA[Login started]]>
+    </line>
+    <line>
+      <![CDATA[Browser is closing]]>
+    </line>
+    <line>
+      <![CDATA[Browser is opening]]>
+    </line>
+    <line>
+      <![CDATA[login test started]]>
+    </line>
+    <line>
+      <![CDATA[chrome]]>
+    </line>
+    <line>
+      <![CDATA[login test started]]>
+    </line>
+    <line>
+      <![CDATA[LoginPage contructor start to initialise Driver]]>
+    </line>
+    <line>
+      <![CDATA[Login started]]>
+    </line>
+    <line>
+      <![CDATA[Browser is closing]]>
+    </line>
+    <line>
+      <![CDATA[Browser is opening]]>
+    </line>
+    <line>
+      <![CDATA[login test started]]>
+    </line>
+    <line>
+      <![CDATA[chrome]]>
+    </line>
+    <line>
+      <![CDATA[login test started]]>
+    </line>
+    <line>
+      <![CDATA[LoginPage contructor start to initialise Driver]]>
+    </line>
+    <line>
+      <![CDATA[Login started]]>
+    </line>
+    <line>
+      <![CDATA[Browser is closing]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2026-01-04T17:02:33 IST" name="OrangeHRM Suite" finished-at="2026-01-04T17:03:25 IST" duration-ms="51790">
+    <groups>
+    </groups>
+    <test started-at="2026-01-04T17:02:33 IST" name="Chrome Test" finished-at="2026-01-04T17:03:25 IST" duration-ms="51790">
+      <class name="orangehrm.pagestest.LoginPageTest">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:orangehrm.pagestest.LoginPageTest@649bec2e]" started-at="2026-01-04T17:02:33 IST" name="beforeClass" finished-at="2026-01-04T17:02:33 IST" duration-ms="27" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:orangehrm.pagestest.LoginPageTest@649bec2e]" started-at="2026-01-04T17:02:33 IST" name="beforeMethod" finished-at="2026-01-04T17:02:44 IST" duration-ms="10137" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Browser is opening]]>
+            </line>
+            <line>
+              <![CDATA[login test started]]>
+            </line>
+            <line>
+              <![CDATA[chrome]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:orangehrm.pagestest.LoginPageTest@649bec2e]" started-at="2026-01-04T17:02:44 IST" name="loginTest" data-provider="loginData" finished-at="2026-01-04T17:02:50 IST" duration-ms="6602" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[login test started]]>
+            </line>
+            <line>
+              <![CDATA[LoginPage contructor start to initialise Driver]]>
+            </line>
+            <line>
+              <![CDATA[Login started]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:orangehrm.pagestest.LoginPageTest@649bec2e]" started-at="2026-01-04T17:02:50 IST" name="afterMethod" finished-at="2026-01-04T17:02:51 IST" duration-ms="801" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Browser is closing]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:orangehrm.pagestest.LoginPageTest@649bec2e]" started-at="2026-01-04T17:02:51 IST" name="beforeMethod" finished-at="2026-01-04T17:02:59 IST" duration-ms="8447" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Browser is opening]]>
+            </line>
+            <line>
+              <![CDATA[login test started]]>
+            </line>
+            <line>
+              <![CDATA[chrome]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:orangehrm.pagestest.LoginPageTest@649bec2e]" started-at="2026-01-04T17:02:59 IST" name="loginTest" data-provider="loginData" finished-at="2026-01-04T17:03:06 IST" duration-ms="6462" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[InvalidUser]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[login test started]]>
+            </line>
+            <line>
+              <![CDATA[LoginPage contructor start to initialise Driver]]>
+            </line>
+            <line>
+              <![CDATA[Login started]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:orangehrm.pagestest.LoginPageTest@649bec2e]" started-at="2026-01-04T17:03:06 IST" name="afterMethod" finished-at="2026-01-04T17:03:07 IST" duration-ms="675" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Browser is closing]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:orangehrm.pagestest.LoginPageTest@649bec2e]" started-at="2026-01-04T17:03:07 IST" name="beforeMethod" finished-at="2026-01-04T17:03:15 IST" duration-ms="8127" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Browser is opening]]>
+            </line>
+            <line>
+              <![CDATA[login test started]]>
+            </line>
+            <line>
+              <![CDATA[chrome]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:orangehrm.pagestest.LoginPageTest@649bec2e]" started-at="2026-01-04T17:03:15 IST" name="loginTest" data-provider="loginData" finished-at="2026-01-04T17:03:23 IST" duration-ms="8109" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[wrongPass]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[login test started]]>
+            </line>
+            <line>
+              <![CDATA[LoginPage contructor start to initialise Driver]]>
+            </line>
+            <line>
+              <![CDATA[Login started]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:orangehrm.pagestest.LoginPageTest@649bec2e]" started-at="2026-01-04T17:03:23 IST" name="afterMethod" finished-at="2026-01-04T17:03:25 IST" duration-ms="2268" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Browser is closing]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:orangehrm.pagestest.LoginPageTest@649bec2e]" started-at="2026-01-04T17:03:25 IST" name="afterClass" finished-at="2026-01-04T17:03:25 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- orangehrm.pagestest.LoginPageTest -->
+    </test> <!-- Chrome Test -->
+  </suite> <!-- OrangeHRM Suite -->
+</testng-results>
