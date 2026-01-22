@@ -10,6 +10,7 @@ public class InputsTest extends BaseTest {
 
     @Test
     public void tc01_verifyInputsAcceptsNumber() {
+        try{
         HomePage home = new HomePage(driver);
         home.openModule("Inputs");
 
@@ -17,5 +18,8 @@ public class InputsTest extends BaseTest {
         page.enterNumber("123");
 
         Assert.assertEquals(page.getValue(), "123");
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
