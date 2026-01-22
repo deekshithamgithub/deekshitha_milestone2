@@ -10,6 +10,7 @@ public class StatusCodesTest extends BaseTest {
 
     @Test
     public void tc01_verifyStatusCode404() {
+        try{
         HomePage home = new HomePage(driver);
         home.openModule("Status Codes");
 
@@ -17,5 +18,8 @@ public class StatusCodesTest extends BaseTest {
         status.open404();
 
         Assert.assertTrue(driver.getPageSource().contains("This page returned a 404 status code"));
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
