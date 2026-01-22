@@ -17,18 +17,35 @@ public class AlertsPage {
     }
 
     public void clickJSAlert() {
+        try {
         driver.findElement(jsAlertBtn).click();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+            
     }
 
     public void clickJSConfirm() {
+        try {
         driver.findElement(jsConfirmBtn).click();
+        }catch (Exception e) {
+            e.printStackTrace();
+        } 
     }
 
     public void clickJSPrompt() {
-        driver.findElement(jsPromptBtn).click();
+         try {
+       driver.findElement(jsPromptBtn).click();
+        }catch (Exception e) {
+            e.printStackTrace();
+        } 
     }
 
     public String getResultText() {
-        return driver.findElement(result).getText();
+         try {
+       return driver.findElement(result).getText();
+        }catch (Exception e) {
+            e.printStackTrace();
+        } 
     }
 }
