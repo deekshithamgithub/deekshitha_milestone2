@@ -14,10 +14,18 @@ public class DropdownPage {
     }
 
     public void selectByVisibleText(String text) {
+        try{
         new Select(driver.findElement(dropdown)).selectByVisibleText(text);
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public String getSelectedOption() {
+         try{
         return new Select(driver.findElement(dropdown)).getFirstSelectedOption().getText();
+             } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
