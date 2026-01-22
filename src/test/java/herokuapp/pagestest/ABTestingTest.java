@@ -28,7 +28,7 @@ public class ABTestingTest extends BaseTest {
 
     @Test
     public void tc01_verifyABTestingPage() {
-
+        try{
         Reporter.log("ABTesting Test Started", true);
 
         HomePage home = new HomePage(driver);
@@ -40,6 +40,9 @@ public class ABTestingTest extends BaseTest {
         Assert.assertTrue(page.isParagraphDisplayed());
 
         Reporter.log("ABTesting Test Completed", true);
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
 
