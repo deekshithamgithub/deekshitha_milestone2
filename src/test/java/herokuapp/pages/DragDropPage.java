@@ -20,6 +20,9 @@ public class DragDropPage {
         Reporter.log("Initializing DragDropPage", true);
         this.driver = driver;
         PageFactory.initElements(driver, this);
+              } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FindBy(id = "column-a")
