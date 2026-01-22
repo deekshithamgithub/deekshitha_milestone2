@@ -16,9 +16,13 @@ public class HorizontalSliderPage {
     private WebDriver driver;
 
     public HorizontalSliderPage(WebDriver driver) {
+        try{
         Reporter.log("Initializing HorizontalSliderPage", true);
         this.driver = driver;
         PageFactory.initElements(driver, this);
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FindBy(tagName = "input")
@@ -28,16 +32,24 @@ public class HorizontalSliderPage {
     private WebElement range;
 
     public void moveSliderRight(int steps) {
+        try{
         Reporter.log("Moving slider to right steps: " + steps, true);
         WaitUtil.waitForVisibility(driver, slider);
         for (int i = 0; i < steps; i++) {
             slider.sendKeys(Keys.ARROW_RIGHT);
         }
         log.info("Slider moved");
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public String getSliderValue() {
+        try{
         WaitUtil.waitForVisibility(driver, range);
         return range.getText();
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
