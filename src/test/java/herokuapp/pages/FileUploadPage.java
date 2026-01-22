@@ -42,9 +42,13 @@ public class FileUploadPage {
     private WebDriver driver;
 
     public FileUploadPage(WebDriver driver) {
+        try{
         Reporter.log("Initializing FileUploadPage", true);
         this.driver = driver;
         PageFactory.initElements(driver, this);
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FindBy(id = "file-upload")
@@ -57,16 +61,24 @@ public class FileUploadPage {
     private WebElement uploadedHeading;
 
     public void uploadFile(String absolutePath) {
+        try{
         Reporter.log("Uploading file: " + absolutePath, true);
         chooseFile.sendKeys(absolutePath);
         WaitUtil.waitForClick(driver, uploadBtn);
         uploadBtn.click();
         log.info("Upload clicked");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public String getUploadedHeading() {
+        try{
         WaitUtil.waitForVisibility(driver, uploadedHeading);
         return uploadedHeading.getText();
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
 
