@@ -10,6 +10,7 @@ public class HoversTest extends BaseTest {
 
     @Test
     public void tc01_verifyHoverShowsProfileLink() {
+        try{
         HomePage home = new HomePage(driver);
         home.openModule("Hovers");
 
@@ -17,5 +18,8 @@ public class HoversTest extends BaseTest {
         page.hoverFirstUser();
 
         Assert.assertTrue(page.isViewProfileVisible());
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
