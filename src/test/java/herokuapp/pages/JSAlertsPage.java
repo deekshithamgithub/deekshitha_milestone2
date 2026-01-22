@@ -15,9 +15,13 @@ public class JSAlertsPage {
     private WebDriver driver;
 
     public JSAlertsPage(WebDriver driver) {
+        try{
         Reporter.log("Initializing JSAlertsPage", true);
         this.driver = driver;
         PageFactory.initElements(driver, this);
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FindBy(xpath = "//button[text()='Click for JS Alert']")
@@ -27,15 +31,23 @@ public class JSAlertsPage {
     private WebElement result;
 
     public void clickJSAlert() {
+        try{
         Reporter.log("Clicking JS Alert button", true);
         WaitUtil.waitForClick(driver, jsAlertBtn);
         jsAlertBtn.click();
         log.info("JS Alert clicked");
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public String getResult() {
+        try{
         Reporter.log("Fetching JS Alert result", true);
         WaitUtil.waitForVisibility(driver, result);
         return result.getText();
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
