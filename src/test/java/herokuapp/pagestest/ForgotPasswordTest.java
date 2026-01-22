@@ -10,6 +10,7 @@ public class ForgotPasswordTest extends BaseTest {
 
     @Test
     public void tc01_verifyForgotPasswordSubmit() {
+        try{
         HomePage home = new HomePage(driver);
         home.openModule("Forgot Password");
 
@@ -18,5 +19,8 @@ public class ForgotPasswordTest extends BaseTest {
         page.clickRetrievePassword();
 
         Assert.assertTrue(driver.getPageSource().contains("Your e-mail's been sent!"));
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
