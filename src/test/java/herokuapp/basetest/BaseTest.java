@@ -71,16 +71,23 @@ public class BaseTest {
     public void setUp(String browser) {
 
         Reporter.log("Opening browser: " + browser, true);
-
-        DriverFactory.initDriver(browser);
-        driver = DriverFactory.getDriver();
-        driver.get("https://the-internet.herokuapp.com/");
+        try {
+            DriverFactory.initDriver(browser);
+            driver = DriverFactory.getDriver();
+            driver.get("https://the-internet.herokuapp.com/");
+        } catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
-        Reporter.log("Closing browser", true);
-        DriverFactory.quitDriver();
+        try {
+            Reporter.log("Closing browser", true);
+            DriverFactory.quitDriver();
+        } catch(Exception e){
+               e.printStackTrace();
+        }
     }
 }
 
