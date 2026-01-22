@@ -12,8 +12,13 @@ public class BasePageTemplate {
     protected WebDriver driver;
 
     public BasePageTemplate(WebDriver driver){
+        try {
         Reporter.log("Initializing Page: " + this.getClass().getSimpleName(), true);
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }
