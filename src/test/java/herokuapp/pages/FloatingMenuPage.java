@@ -15,21 +15,33 @@ public class FloatingMenuPage {
     private WebDriver driver;
 
     public FloatingMenuPage(WebDriver driver) {
+        try{
         Reporter.log("Initializing FloatingMenuPage", true);
         this.driver = driver;
         PageFactory.initElements(driver, this);
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FindBy(id = "menu")
     private WebElement menu;
 
     public void scrollDown() {
+        try{
         Reporter.log("Scrolling down", true);
         ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,1000);");
         log.info("Scrolled down");
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public boolean isMenuDisplayed() {
+        try{
         return menu.isDisplayed();
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
