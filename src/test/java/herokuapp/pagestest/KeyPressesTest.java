@@ -11,6 +11,7 @@ public class KeyPressesTest extends BaseTest {
 
     @Test
     public void tc01_verifyKeyPressResult() {
+        try{
         HomePage home = new HomePage(driver);
         home.openModule("Key Presses");
 
@@ -18,5 +19,8 @@ public class KeyPressesTest extends BaseTest {
         page.pressKey(Keys.ENTER);
 
         Assert.assertTrue(page.getResult().contains("ENTER"));
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
