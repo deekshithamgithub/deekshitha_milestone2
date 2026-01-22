@@ -15,18 +15,26 @@ public class MultipleWindowsPage {
     private WebDriver driver;
 
     public MultipleWindowsPage(WebDriver driver) {
+        try{
         Reporter.log("Initializing MultipleWindowsPage", true);
         this.driver = driver;
         PageFactory.initElements(driver, this);
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FindBy(linkText = "Click Here")
     private WebElement clickHere;
 
     public void openNewWindow() {
+        try{
         Reporter.log("Clicking to open new window", true);
         WaitUtil.waitForClick(driver, clickHere);
         clickHere.click();
         log.info("New window opened");
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
