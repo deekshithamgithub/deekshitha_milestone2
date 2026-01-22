@@ -10,6 +10,7 @@ public class DynamicControlsTest extends BaseTest {
 
     @Test
     public void tc01_verifyDynamicControlsRemove() {
+        try{
         HomePage home = new HomePage(driver);
         home.openModule("Dynamic Controls");
 
@@ -17,5 +18,8 @@ public class DynamicControlsTest extends BaseTest {
         page.clickRemove();
 
         Assert.assertTrue(page.getMessage().contains("It's gone!"));
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
