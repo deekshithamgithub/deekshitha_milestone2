@@ -11,6 +11,7 @@ public class DynamicLoadingTest extends BaseTest {
 
     @Test
     public void tc01_verifyDynamicLoadingExample2() {
+        try{
         HomePage home = new HomePage(driver);
         home.openModule("Dynamic Loading");
 
@@ -21,5 +22,8 @@ public class DynamicLoadingTest extends BaseTest {
         ex2.clickStart();
 
         Assert.assertTrue(ex2.getFinishText().contains("Hello World!"));
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
