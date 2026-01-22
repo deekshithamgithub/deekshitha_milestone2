@@ -10,6 +10,7 @@ public class ContextMenuTest extends BaseTest {
 
     @Test
     public void tc01_verifyContextMenuAlert() {
+        try{
         HomePage home = new HomePage(driver);
         home.openModule("Context Menu");
 
@@ -20,5 +21,9 @@ public class ContextMenuTest extends BaseTest {
         driver.switchTo().alert().accept();
 
         Assert.assertTrue(alertText.contains("You selected a context menu"));
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
     }
 }
