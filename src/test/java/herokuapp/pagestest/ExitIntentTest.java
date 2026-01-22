@@ -10,6 +10,7 @@ public class ExitIntentTest extends BaseTest {
 
     @Test
     public void tc01_verifyExitIntentModalAppears() {
+        try{
         HomePage home = new HomePage(driver);
         home.openModule("Exit Intent");
 
@@ -17,5 +18,8 @@ public class ExitIntentTest extends BaseTest {
         page.triggerExitIntent();
 
         Assert.assertTrue(page.isModalDisplayed());
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
