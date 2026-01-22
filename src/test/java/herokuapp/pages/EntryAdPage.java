@@ -15,9 +15,14 @@ public class EntryAdPage {
     private WebDriver driver;
 
     public EntryAdPage(WebDriver driver) {
+        try{
         Reporter.log("Initializing EntryAdPage", true);
         this.driver = driver;
         PageFactory.initElements(driver, this);
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
+            
     }
 
     @FindBy(css = ".modal")
@@ -36,9 +41,13 @@ public class EntryAdPage {
     }
 
     public void closeModal() {
+        try{
         Reporter.log("Closing modal", true);
         WaitUtil.waitForClick(driver, closeBtn);
         closeBtn.click();
         log.info("Modal closed");
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
