@@ -15,18 +15,26 @@ public class RedirectLinkPage {
     private WebDriver driver;
 
     public RedirectLinkPage(WebDriver driver) {
+        try{
         Reporter.log("Initializing RedirectLinkPage", true);
         this.driver = driver;
         PageFactory.initElements(driver, this);
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FindBy(id = "redirect")
     private WebElement redirectLink;
 
     public void clickRedirectLink() {
+        try{
         Reporter.log("Clicking redirect link", true);
         WaitUtil.waitForClick(driver, redirectLink);
         redirectLink.click();
         log.info("Redirect link clicked");
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
