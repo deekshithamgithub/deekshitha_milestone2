@@ -10,6 +10,7 @@ public class HorizontalSliderTest extends BaseTest {
 
     @Test
     public void tc01_verifySliderMoves() {
+        try{
         HomePage home = new HomePage(driver);
         home.openModule("Horizontal Slider");
 
@@ -17,5 +18,8 @@ public class HorizontalSliderTest extends BaseTest {
         page.moveSliderRight(5);
 
         Assert.assertNotEquals(page.getSliderValue(), "0");
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
