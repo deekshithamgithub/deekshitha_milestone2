@@ -15,9 +15,13 @@ public class FormAuthPage {
     private WebDriver driver;
 
     public FormAuthPage(WebDriver driver) {
+        try{
         Reporter.log("Initializing FormAuthPage", true);
         this.driver = driver;
         PageFactory.initElements(driver, this);
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FindBy(id = "username")
@@ -33,6 +37,7 @@ public class FormAuthPage {
     private WebElement flash;
 
     public void login(String user, String pass) {
+        try{
         Reporter.log("Logging in user: " + user, true);
         WaitUtil.waitForVisibility(driver, username);
         username.clear();
@@ -44,10 +49,17 @@ public class FormAuthPage {
         WaitUtil.waitForClick(driver, loginBtn);
         loginBtn.click();
         log.info("Login submitted");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public String getFlashMessage() {
+        try{
         WaitUtil.waitForVisibility(driver, flash);
         return flash.getText();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
