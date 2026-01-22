@@ -16,6 +16,7 @@ public class DragDropPage {
     private WebDriver driver;
 
     public DragDropPage(WebDriver driver) {
+        try {
         Reporter.log("Initializing DragDropPage", true);
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -28,13 +29,21 @@ public class DragDropPage {
     private WebElement boxB;
 
     public String getBoxAHeader() {
+         try {
         WaitUtil.waitForVisibility(driver, boxA);
         return boxA.findElement(org.openqa.selenium.By.tagName("header")).getText();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void dragAtoB() {
+         try {
         Reporter.log("Dragging A to B", true);
         new Actions(driver).dragAndDrop(boxA, boxB).perform();
         log.info("Drag A -> B performed");
+         } catch (Exception e) {
+            e.printStackTrace();
+        }    
     }
 }
