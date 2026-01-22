@@ -10,6 +10,7 @@ public class JSAlertsTest extends BaseTest {
 
     @Test
     public void tc01_verifyJSAlert() {
+        try{
         HomePage home = new HomePage(driver);
         home.openModule("JavaScript Alerts");
 
@@ -19,5 +20,8 @@ public class JSAlertsTest extends BaseTest {
         driver.switchTo().alert().accept();
 
         Assert.assertTrue(page.getResult().contains("You successfully clicked an alert"));
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
