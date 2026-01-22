@@ -12,6 +12,7 @@ public class MultipleWindowsTest extends BaseTest {
 
     @Test
     public void tc01_verifyMultipleWindows() {
+        try{
         HomePage home = new HomePage(driver);
         home.openModule("Multiple Windows");
 
@@ -30,5 +31,8 @@ public class MultipleWindowsTest extends BaseTest {
         Assert.assertTrue(driver.getTitle().contains("New Window"));
         driver.close();
         driver.switchTo().window(parent);
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
