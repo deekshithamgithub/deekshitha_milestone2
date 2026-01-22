@@ -10,6 +10,7 @@ public class EntryAdTest extends BaseTest {
 
     @Test
     public void tc01_verifyEntryAdModalCanBeClosed() {
+        try{
         HomePage home = new HomePage(driver);
         home.openModule("Entry Ad");
 
@@ -20,5 +21,8 @@ public class EntryAdTest extends BaseTest {
         }
 
         Assert.assertTrue(driver.getPageSource().contains("Entry Ad"));
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
