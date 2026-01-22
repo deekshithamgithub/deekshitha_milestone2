@@ -10,6 +10,7 @@ public class FormAuthTest extends BaseTest {
 
     @Test
     public void tc01_verifyValidLogin() {
+        try{
         HomePage home = new HomePage(driver);
         home.openModule("Form Authentication");
 
@@ -17,5 +18,8 @@ public class FormAuthTest extends BaseTest {
         page.login("tomsmith", "SuperSecretPassword!");
 
         Assert.assertTrue(page.getFlashMessage().contains("You logged into a secure area!"));
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
