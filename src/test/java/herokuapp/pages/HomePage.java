@@ -45,9 +45,13 @@ public class HomePage {
     private WebDriver driver;
 
     public HomePage(WebDriver driver){
+        try{
         Reporter.log("Initializing HomePage", true);
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FindBy(tagName = "h1")
@@ -57,25 +61,38 @@ public class HomePage {
     private WebElement subHeader;
 
     public String getHeaderText(){
+        try{
         Reporter.log("Fetching Home header text", true);
         WaitUtil.waitForVisibility(driver, header);
         String text = header.getText();
         log.info("Header Text: " + text);
         return text;
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public String getSubHeaderText(){
+        try{
         Reporter.log("Fetching Home sub-header text", true);
         WaitUtil.waitForVisibility(driver, subHeader);
         String text = subHeader.getText();
         log.info("SubHeader Text: " + text);
         return text;
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
+    
     public void openModule(String linkText){
+        try{
         Reporter.log("Opening module link: " + linkText, true);
         driver.findElement(org.openqa.selenium.By.linkText(linkText)).click();
         log.info("Opened module: " + linkText);
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
 
