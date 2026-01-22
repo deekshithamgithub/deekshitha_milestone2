@@ -14,9 +14,13 @@ public class FramesPage {
     private WebDriver driver;
 
     public FramesPage(WebDriver driver) {
+        try{
         Reporter.log("Initializing FramesPage", true);
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FindBy(id = "mce_0_ifr")
@@ -26,6 +30,7 @@ public class FramesPage {
     private WebElement editor;
 
     public void setTextUsingJS(String text) {
+        try{
         Reporter.log("Typing text using JS in iframe", true);
 
         driver.switchTo().frame(iframe);
@@ -37,12 +42,19 @@ public class FramesPage {
         log.info("Typed in iframe: " + text);
 
         driver.switchTo().defaultContent();
+} catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public String getEditorText() {
+        try{
         driver.switchTo().frame(iframe);
         String value = editor.getText().trim();
         driver.switchTo().defaultContent();
         return value;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
