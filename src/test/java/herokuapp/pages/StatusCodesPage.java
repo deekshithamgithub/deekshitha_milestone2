@@ -14,17 +14,25 @@ public class StatusCodesPage {
     private WebDriver driver;
 
     public StatusCodesPage(WebDriver driver) {
+        try{
         Reporter.log("Initializing StatusCodesPage", true);
         this.driver = driver;
         PageFactory.initElements(driver, this);
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FindBy(linkText = "404")
     private WebElement code404;
 
     public void open404() {
+        try{
         Reporter.log("Opening 404 status code page", true);
         code404.click();
         log.info("404 opened");
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
