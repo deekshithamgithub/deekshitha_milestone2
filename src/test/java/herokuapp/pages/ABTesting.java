@@ -36,10 +36,15 @@ public class ABTesting {
     private WebDriver driver;
 
     public ABTesting(WebDriver driver) {
-        Reporter.log("Initializing ABTestingPage", true);
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-        log.info("ABTestingPage initialized");
+        try {
+            Reporter.log("Initializing ABTestingPage", true);
+            this.driver = driver;
+            PageFactory.initElements(driver, this);
+            log.info("ABTestingPage initialized");
+        } catch (Exception e) {
+            Reporter.log(" Error while initializing ABTestingPage: " + e.getMessage(), true);
+            log.error("Error while initializing ABTestingPage", e);
+        }
     }
 
     @FindBy(tagName = "h3")
@@ -49,18 +54,33 @@ public class ABTesting {
     private WebElement paragraph;
 
     public String getHeadingText() {
-        Reporter.log("Getting AB Testing heading text", true);
-        WaitUtil.waitForVisibility(driver, heading);
-        String text = heading.getText();
-        log.info("Heading: " + text);
-        return text;
-    }
+        try {
+            Reporter.log("Getting AB Testing heading text", true);
+            WaitUtil.waitForVisibility(driver, heading);
 
+            String text = heading.getText();
+            log.info("Heading: " + text);
+            return text;
+
+        } catch (Exception e) {
+            Reporter.log(" Error while getting heading text: " + e.getMessage(), true);
+            log.error("Error while getting heading text", e);
+            return null;   // returning null if fails
+        }
+    }
     public boolean isParagraphDisplayed() {
-        Reporter.log("Checking AB Testing paragraph displayed", true);
-        WaitUtil.waitForVisibility(driver, paragraph);
-        boolean status = paragraph.isDisplayed();
-        log.info("Paragraph displayed: " + status);
-        return status;
+        try {
+            Reporter.log("Checking AB Testing paragraph displayed", true);
+            WaitUtil.waitForVisibility(driver, paragraph);
+
+            boolean status = paragraph.isDisplayed();
+            log.info("Paragraph displayed: " + status);
+            return status;
+
+        } catch (Exception e) {
+            Reporter.log(" Error while checking paragraph display: " + e.getMessage(), true);
+            log.error("Error while checking paragraph display", e);
+            return false;  // returning false if fails
+        }
     }
 }
