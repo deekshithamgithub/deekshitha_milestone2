@@ -15,19 +15,27 @@ public class BasicAuthPage {
     private WebDriver driver;
 
     public BasicAuthPage(WebDriver driver) {
+        try {
         Reporter.log("Initializing BasicAuthPage", true);
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FindBy(tagName = "p")
     private WebElement message;
 
     public String getMessageText() {
+        try {
         Reporter.log("Fetching BasicAuth success message", true);
         WaitUtil.waitForVisibility(driver, message);
         String text = message.getText();
         log.info("Auth Message: " + text);
         return text;
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
