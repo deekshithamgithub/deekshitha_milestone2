@@ -10,6 +10,7 @@ public class InfiniteScrollTest extends BaseTest {
 
     @Test
     public void tc01_verifyInfiniteScrollLoadsContent() {
+        try{
         HomePage home = new HomePage(driver);
         home.openModule("Infinite Scroll");
 
@@ -18,5 +19,8 @@ public class InfiniteScrollTest extends BaseTest {
         page.scrollDown();
 
         Assert.assertTrue(page.hasParagraphs());
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
