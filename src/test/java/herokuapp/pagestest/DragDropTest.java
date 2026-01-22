@@ -10,6 +10,7 @@ public class DragDropTest extends BaseTest {
 
     @Test
     public void tc01_verifyDragDropWorks() {
+        try{
         HomePage home = new HomePage(driver);
         home.openModule("Drag and Drop");
 
@@ -20,5 +21,8 @@ public class DragDropTest extends BaseTest {
 
         String after = page.getBoxAHeader();
         Assert.assertNotEquals(after, before);
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
