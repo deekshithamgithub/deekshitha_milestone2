@@ -15,9 +15,13 @@ public class DynamicLoadingExample2Page {
     private WebDriver driver;
 
     public DynamicLoadingExample2Page(WebDriver driver) {
+        try{
         Reporter.log("Initializing DynamicLoadingExample2Page", true);
         this.driver = driver;
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements(driver, this)
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FindBy(css = "#start button")
@@ -27,15 +31,23 @@ public class DynamicLoadingExample2Page {
     private WebElement finishText;
 
     public void clickStart() {
+        try{
         Reporter.log("Clicking Start button", true);
         WaitUtil.waitForClick(driver, startBtn);
         startBtn.click();
         log.info("Start clicked");
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public String getFinishText() {
+        try{
         Reporter.log("Fetching finish text", true);
         WaitUtil.waitForVisibility(driver, finishText);
         return finishText.getText();
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
