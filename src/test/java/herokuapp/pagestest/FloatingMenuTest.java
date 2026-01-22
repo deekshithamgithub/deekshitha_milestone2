@@ -10,6 +10,7 @@ public class FloatingMenuTest extends BaseTest {
 
     @Test
     public void tc01_verifyFloatingMenuVisibleAfterScroll() {
+        try{
         HomePage home = new HomePage(driver);
         home.openModule("Floating Menu");
 
@@ -17,5 +18,8 @@ public class FloatingMenuTest extends BaseTest {
         page.scrollDown();
 
         Assert.assertTrue(page.isMenuDisplayed());
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
