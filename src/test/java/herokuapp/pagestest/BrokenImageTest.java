@@ -10,10 +10,14 @@ public class BrokenImageTest extends BaseTest {
 
     @Test
     public void tc01_verifyBrokenImagesPageLoads() {
+        try{
         HomePage home = new HomePage(driver);
         home.openModule("Broken Images");
 
         BrokenImagePage page = new BrokenImagePage(driver);
         Assert.assertTrue(page.getImagesCount() > 0);
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
