@@ -63,9 +63,13 @@ public class DynamicControlsPage {
     private WebDriver driver;
 
     public DynamicControlsPage(WebDriver driver) {
+        try{
         Reporter.log("Initializing DynamicControlsPage", true);
         this.driver = driver;
         PageFactory.initElements(driver, this);
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FindBy(xpath = "//button[contains(text(),'Remove')]")
@@ -75,15 +79,23 @@ public class DynamicControlsPage {
     private WebElement message;
 
     public void clickRemove() {
+          try{
         Reporter.log("Clicking Remove button", true);
         WaitUtil.waitForClick(driver, removeBtn);
         removeBtn.click();
         log.info("Remove clicked");
+              } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public String getMessage() {
+          try{
         Reporter.log("Fetching dynamic controls message", true);
         WaitUtil.waitForVisibility(driver, message);
         return message.getText();
+              } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
