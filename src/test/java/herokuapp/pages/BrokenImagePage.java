@@ -17,18 +17,26 @@ public class BrokenImagePage {
     private WebDriver driver;
 
     public BrokenImagePage(WebDriver driver) {
+        try {
         Reporter.log("Initializing BrokenImagePage", true);
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FindBy(tagName = "img")
     private List<WebElement> images;
 
     public int getImagesCount() {
+        try {
         Reporter.log("Getting images count", true);
         int count = images.size();
         log.info("Total images: " + count);
         return count;
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
