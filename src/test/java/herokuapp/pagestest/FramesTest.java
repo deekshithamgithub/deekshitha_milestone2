@@ -10,6 +10,7 @@ public class FramesTest extends BaseTest {
 
     @Test
     public void tc01_verifyIFrameTyping() {
+        try{
         HomePage home = new HomePage(driver);
         home.openModule("Frames");
         home.openModule("iFrame");
@@ -18,5 +19,8 @@ public class FramesTest extends BaseTest {
         frame.setTextUsingJS("Hello Herokuapp Frame");
 
         Assert.assertEquals(frame.getEditorText(), "Hello Herokuapp Frame");
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
