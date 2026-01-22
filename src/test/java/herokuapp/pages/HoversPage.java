@@ -18,9 +18,13 @@ public class HoversPage {
     private WebDriver driver;
 
     public HoversPage(WebDriver driver) {
+        try{
         Reporter.log("Initializing HoversPage", true);
         this.driver = driver;
         PageFactory.initElements(driver, this);
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FindBy(css = ".figure")
@@ -30,14 +34,22 @@ public class HoversPage {
     private WebElement viewProfile1;
 
     public void hoverFirstUser() {
+        try{
         Reporter.log("Hovering first user image", true);
         WaitUtil.waitForVisibility(driver, figures.get(0));
         new Actions(driver).moveToElement(figures.get(0)).perform();
         log.info("Hovered first user");
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public boolean isViewProfileVisible() {
+        try{
         Reporter.log("Checking View profile link visibility", true);
         return viewProfile1.isDisplayed();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
